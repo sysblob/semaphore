@@ -1,0 +1,17 @@
+---
+ 
+ - hosts: all
+   become: true
+   pre_tasks:
+ 
+   - name: install updates (Ubuntu)
+     apt:
+       update_cache: yes
+       upgrade: 'yes'
+     when: ansible_distribution == "Ubuntu"
+ 
+   - name: install updates (RHEL)
+     yum:
+       name: '*'
+       state: latest
+     when: ansible_distribution == "Rocky"

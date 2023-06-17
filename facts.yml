@@ -1,0 +1,7 @@
+- hosts: all
+  tasks:
+    - name: print facts # This playbook simply prints useful facts about hosts
+      debug:
+        msg:
+          - "The hostname is: {{ inventory_hostname }}"
+          - "IPv4 address: {{ ansible_default_ipv4.address }}"
