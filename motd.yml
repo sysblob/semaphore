@@ -2,3 +2,4 @@
   tasks:
     - name: return motd banner
       ansible.builtin.command: cat /etc/resolv.conf
+      register: motd
