@@ -1,0 +1,4 @@
+- hosts: all
+  tasks:
+    - name: return motd banner
+      ansible.builtin.command: cat /etc/motd
