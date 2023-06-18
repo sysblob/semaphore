@@ -3,4 +3,5 @@
     - name: return motd banner
       ansible.builtin.command: cat /etc/resolv.conf
       register: motd
-- debug: var=motd.stdout_lines
+    
+    - debug: var=motd.stdout_lines
