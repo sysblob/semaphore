@@ -1,7 +1,0 @@
-- hosts: all
-  tasks:
-    - name: return motd banner
-      ansible.builtin.command: cat /etc/resolv.conf
-      register: motd
-    
-    - debug: var=motd.stdout_lines

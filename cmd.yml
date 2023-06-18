@@ -1,0 +1,7 @@
+- hosts: all
+  tasks:
+    - name: run command and return stdout
+      ansible.builtin.command: cat /etc/resolv.conf
+      register: cmdreturn
+    
+    - debug: var=cmdreturn.stdout_lines
