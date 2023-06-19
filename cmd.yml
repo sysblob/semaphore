@@ -1,6 +1,6 @@
 - hosts: all
   tasks:
-    - name: run command and return stdout
+    - name: run commands and return stdout
       ansible.builtin.command: cat /etc/resolv.conf
       register: cmdreturn
     
