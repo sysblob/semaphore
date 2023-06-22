@@ -3,6 +3,6 @@
   tasks:
     - name: download file
       ansible.builtin.get_url:
-      url: https://sysblob.com/img/logo.png
-      dest: /test/make/logo.png
-      mode: '0775'
+        url: https://sysblob.com/img/logo.png
+        dest: /test/make/logo.png
+        mode: '0775'
