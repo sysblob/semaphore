@@ -6,6 +6,5 @@
     - debug: var=cmdreturn.stdout_lines
     - name: Shell module example
       shell: |
-           echo "it works1"
-           echo "it works2"
-           echo "it works3"
+           echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+           $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
