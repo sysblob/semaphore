@@ -6,6 +6,6 @@
     - debug: var=cmdreturn.stdout_lines
     - name: Shell module example
       shell: |
-     	    echo "it works1"
-          echo "it works2"
-          echo "it works3"
+           echo "it works1"
+           echo "it works2"
+           echo "it works3"
