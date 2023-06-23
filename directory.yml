@@ -1,0 +1,8 @@
+- hosts: all
+  become: Yes
+  tasks:
+    - name: create test directory # This playbook simply prints useful facts about hosts
+      ansible.builtin.file:
+        path: /test
+        state: directory
+        mode: '0755'
