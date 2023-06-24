@@ -2,6 +2,5 @@
   tasks:
     - name: retrieve hosts /etc/resolv.conf information
       ansible.builtin.command: cat /etc/resolv.conf
-      register: cmdreturn
-    
+      register: cmdreturn    
     - debug: var=cmdreturn.stdout_lines

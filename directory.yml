@@ -1,7 +1,7 @@
 - hosts: all
   become: Yes
   tasks:
-    - name: create test directory # This playbook simply prints useful facts about hosts
+    - name: create test directory 
       ansible.builtin.file:
         path: /test
         state: directory
