@@ -3,4 +3,5 @@
     - name: add gpg
       ansible.builtin.command: curl -fsSL https://download.docker.com/linux/ubuntu/gpg
       register: temp_gpg 
-    - debug: var=temp_gpg.stdout_lines
+    - name: add gpg part 2
+      ansible.builtin.command: gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg {{ temp_gpg }}
