@@ -25,3 +25,14 @@
           update_cache: true
       - name: Add user to docker group
         ansible.builtin.command: usermod -aG docker 'lucyadmin'
+      - name: Create docker log rotation
+        copy:
+          dest: "/etc/docker/daemon.json"
+          content: |
+            {
+              "log-driver": "json-file",
+              "log-opts": {
+              "max-size": "50m",
+              "max-file": "3" 
+              }
+            }
