@@ -4,7 +4,7 @@
   hosts: all
   gather_facts: no
   order: sorted
-  become: True
+  become: yes
 
   collections:
     - ansible.builtin
