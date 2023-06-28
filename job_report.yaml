@@ -4,7 +4,9 @@
   hosts: all
   gather_facts: no
   order: sorted
-  become: yes
+  ansible_become: true
+  ansible_become_method: "su"
+  ansible_become_exe: 'sudo -p "Password: " su -'
 
   collections:
     - ansible.builtin
