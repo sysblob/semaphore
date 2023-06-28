@@ -10,7 +10,7 @@
     email_to: gsowell@redhat.com
  
     #random settings
-    csv_path: /tmp
+    csv_path: /var/temp
     csv_filename: report.csv
     headers: Hostname,Distro Ver,Kernel Ver,Last Rebooted
  
