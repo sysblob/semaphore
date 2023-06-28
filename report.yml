@@ -47,3 +47,8 @@
     debug:
       var: csv_file
     run_once: true
+
+  - name: generate template
+    template:
+       src: report.html.j2
+       dest: final.html
