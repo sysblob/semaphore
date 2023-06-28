@@ -43,20 +43,7 @@
     delegate_to: localhost
     run_once: true
  
-#  - name: debug csv_file
-#    debug:
-#      var: csv_file
-#    run_once: true
- 
-  - name: Send Email
-    community.general.mail:
-      host: "{{ email_host }}"
-      from: "{{ email_from }}"
-      port: 25
-      to: "{{ email_to }}"
-      subject: "[Ansible] {{ email_subject }}"
-      body: "{{ lookup('template', 'report.html.j2') }}"
-      attach: "{{ csv_path }}/{{ csv_filename }}"
-      subtype: html
-    delegate_to: localhost
+  - name: debug csv_file
+    debug:
+      var: csv_file
     run_once: true
