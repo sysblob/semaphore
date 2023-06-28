@@ -42,13 +42,9 @@
     register: csv_file
     delegate_to: localhost
     run_once: true
- 
-  - name: debug csv_file
-    debug:
-      var: csv_file
-    run_once: true
 
   - name: generate template
     template:
        src: report.html.j2
        dest: final.html
+       delegate_to: localhost
