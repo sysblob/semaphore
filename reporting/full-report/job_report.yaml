@@ -82,7 +82,6 @@
     - name: Save job report to {{ outdir }}
       delegate_to: localhost
       delegate_facts: True
-      become: true
       run_once: yes
       template:
         src: job_report_master.j2
