@@ -3,12 +3,7 @@
   hosts: all
   gather_facts: true
   vars:
-    #email settings
-    email_subject: Patching Report
-    email_host: 10.1.5.25
-    email_from: system@gregsowell.com
-    email_to: gsowell@redhat.com
- 
+    local_file: "./report.html" 
     #random settings
     csv_path: /tmp
     csv_filename: report.csv
@@ -30,6 +25,7 @@
  
   - name: Build out CSV file
     ansible.builtin.lineinfile:
+      path: "{{ local_file }}"
       dest: "{{ csv_path }}/{{ csv_filename }}"
       line: "{{ inventory_hostname }},{{ ansible_distribution_version }},{{ ansible_kernel }},{{ rebooted.stdout }}"
       create: true
@@ -46,5 +42,5 @@
   - name: generate template
     template:
        src: report.html.j2
-       dest: final.html
+       dest: report.html
     delegate_to: localhost
