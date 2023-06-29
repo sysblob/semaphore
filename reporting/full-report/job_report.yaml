@@ -5,9 +5,8 @@
   gather_facts: no
   order: sorted
   become: true
-  become_user: root
   become_method: su
-  become_exe: sudo su -
+  become_flags: "-"
 
   collections:
     - ansible.builtin
