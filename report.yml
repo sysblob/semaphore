@@ -26,7 +26,6 @@
   - name: Build out CSV file
     ansible.builtin.lineinfile:
       path: "{{ local_file }}"
-      dest: "{{ csv_path }}/{{ csv_filename }}"
       line: "{{ inventory_hostname }},{{ ansible_distribution_version }},{{ ansible_kernel }},{{ rebooted.stdout }}"
       create: true
       state: present
@@ -43,4 +42,3 @@
     template:
        src: report.html.j2
        dest: report.html
-    delegate_to: localhost
