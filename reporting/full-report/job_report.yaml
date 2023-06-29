@@ -10,7 +10,7 @@
 
   vars:
     # Location for job reports
-    outdir: ./config/reports
+    outdir: /reports
     # CSS styling for navbar: menu width, failed/missing colors
     nav_width: 200px
     failed_style: 'color:orangered'
