@@ -12,7 +12,7 @@
 
   vars:
     # Location for job reports
-    outdir: /home/semaphore/reports
+    outdir: /var/tmp
     # CSS styling for navbar: menu width, failed/missing colors
     nav_width: 200px
     failed_style: 'color:orangered'
