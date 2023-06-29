@@ -4,8 +4,6 @@
   hosts: all
   gather_facts: no
   order: sorted
-  become: true
-  become_user: root
 
   collections:
     - ansible.builtin
@@ -13,7 +11,7 @@
 
   vars:
     # Location for job reports
-    outdir: /reports
+    outdir: /home/semaphore/reports
     # CSS styling for navbar: menu width, failed/missing colors
     nav_width: 200px
     failed_style: 'color:orangered'
