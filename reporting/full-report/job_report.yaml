@@ -24,6 +24,8 @@
       file:
         path: "{{ outdir }}"
         state: directory
+        owner: semaphore
+        mode: '0775'
     
     # We set hosts as failed/missing until proven otherwise. See README.md
     - name: Set initial job status to catch missing/failed hosts
