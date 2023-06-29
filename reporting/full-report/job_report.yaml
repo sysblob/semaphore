@@ -2,8 +2,6 @@
 
 - name: Run jobs and generate report
   hosts: all
-  become: true
-  become_user: root
   gather_facts: no
   order: sorted
   collections:
