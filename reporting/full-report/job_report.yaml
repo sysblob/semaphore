@@ -11,7 +11,7 @@
 
   vars:
     # Location for job reports
-    outdir: /home/semaphore/reports
+    outdir: /var/semaphore/reports
     # CSS styling for navbar: menu width, failed/missing colors
     nav_width: 200px
     failed_style: 'color:orangered'
@@ -82,6 +82,7 @@
     - name: Save job report to {{ outdir }}
       delegate_to: localhost
       delegate_facts: True
+      become: true
       run_once: yes
       template:
         src: job_report_master.j2
