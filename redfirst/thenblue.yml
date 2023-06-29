@@ -1,7 +1,0 @@
-- hosts: all
-  tasks:
-    - name: Print facts
-      ansible.builtin.debug:
-        msg:
-          - "The hostname is: {{ inventory_hostname }}"
-          - "IPv4 address: {{ ansible_default_ipv4.address }}"
