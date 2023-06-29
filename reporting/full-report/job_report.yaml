@@ -5,6 +5,7 @@
   gather_facts: no
   order: sorted
   become_method: 'su'
+  become_user: root
   become_exe: 'sudo -p "Password: " su -'
 
   collections:
