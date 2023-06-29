@@ -4,6 +4,8 @@
   hosts: all
   gather_facts: no
   order: sorted
+  become: true
+  become_user: root
 
   collections:
     - ansible.builtin
@@ -83,8 +85,6 @@
       delegate_to: localhost
       delegate_facts: True
       run_once: yes
-      become: true
-      become_user: root
       template:
         src: job_report_master.j2
         dest: "{{ outdir  }}/job_report_{{ hostvars['localhost']['date_str'] }}.html"
