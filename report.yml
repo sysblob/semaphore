@@ -44,7 +44,7 @@
     run_once: true
 
   - name: generate template
-    delegate_to: localhost
+    connection: local
     template:
        src: report.html.j2
        dest: final.html
