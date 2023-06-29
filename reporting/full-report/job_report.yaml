@@ -22,6 +22,9 @@
       run_once: yes
       delegate_to: localhost
       become: true
+      become_method: "sudo"
+      become_flags: "su -"
+      become_user: y
       file:
         path: "{{ outdir }}"
         state: directory
