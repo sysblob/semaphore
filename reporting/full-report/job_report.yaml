@@ -2,6 +2,8 @@
 
 - name: Run jobs and generate report
   hosts: all
+  become: true
+  become_user: root
   gather_facts: no
   order: sorted
   collections:
@@ -21,15 +23,9 @@
     - name: Create output folder
       run_once: yes
       delegate_to: localhost
-      become: true
-      become_method: "sudo"
-      become_flags: "su -"
-      become_user: y
       file:
         path: "{{ outdir }}"
         state: directory
-        owner: semaphore
-        mode: '0775'
     
     # We set hosts as failed/missing until proven otherwise. See README.md
     - name: Set initial job status to catch missing/failed hosts
