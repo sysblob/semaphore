@@ -1,0 +1,5 @@
+---
+- hosts: all
+  tasks:
+      - name: spawn an ubuntu clone
+        ansible.builtin.command: qm reboot 188
