@@ -1,4 +1,7 @@
-- name: Create a full clone of the container with id 100
+---
+- hosts: all
+  tasks:
+      - name: Create a full clone of the container with id 100
   community.general.proxmox:
     vmid: 8000
     node: ricky-prox.homelab.sysblob.com
