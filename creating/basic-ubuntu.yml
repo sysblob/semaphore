@@ -5,7 +5,7 @@
         community.general.proxmox:
           vmid: 8000
           node: ricky-prox.homelab.sysblob.com
-          api_user: lucyadmin
+          api_user: root@pam
           api_password: Asarvthegod0-9
           api_host: test4
           clone: 199
