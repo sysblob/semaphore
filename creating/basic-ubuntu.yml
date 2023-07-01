@@ -1,13 +1,9 @@
 ---
 - hosts: all
   tasks:
-      - name: Create a full clone of the container with id 199
-        community.general.proxmox:
-          vmid: 199
-          node: ricky-prox
-          api_user: root@pam
-          api_password: Asarvthegod0-9
-          api_host: ricky-prox.homelab.sysblob.com
-          clone: 8000
-          hostname: test4
-          storage: vm-storage
+      - name: update apt packages
+        ansible.builtin.command: 
+
+
+- name: Add user to docker group
+        ansible.builtin.command: qm clone 8000 188 --name test5 --full
