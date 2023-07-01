@@ -2,12 +2,12 @@
 - hosts: all
   tasks:
       - name: Create a full clone of the container with id 100
-  community.general.proxmox:
-    vmid: 8000
-    node: ricky-prox.homelab.sysblob.com
-    api_user: lucyadmin
-    api_password: Asarvthegod0-9
-    api_host: test4
-    clone: 199
-    hostname: test4
-    storage: vm-storage
+        community.general.proxmox:
+          vmid: 8000
+          node: ricky-prox.homelab.sysblob.com
+          api_user: lucyadmin
+          api_password: Asarvthegod0-9
+          api_host: test4
+          clone: 199
+          hostname: test4
+          storage: vm-storage
