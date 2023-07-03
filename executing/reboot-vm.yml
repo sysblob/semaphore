@@ -1,5 +1,5 @@
 ---
 - hosts: all
   tasks:
-      - name: spawn an ubuntu clone
+      - name: start the proxmox vm
         ansible.builtin.command: qm reboot 188
