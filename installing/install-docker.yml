@@ -1,38 +1,33 @@
 ---
-- hosts: all
+- name: Playbook - Installing baseline
+  hosts: all
   become: true
   tasks:
-      - name: update apt packages
-        apt: 
-          upgrade: yes
-          update_cache: yes
-      - name: Add Docker GPG key
-        ansible.builtin.apt_key:
-          url: https://download.docker.com/linux/ubuntu/gpg
-          state: present
-      - name: Add Docker repository
-        ansible.builtin.apt_repository:
-          repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
-          state: present
-      - name: Install packages
-        apt:
-          pkg:
-            - docker-ce
-            - docker-ce-cli
-            - containerd.io
-            - docker-compose-plugin
-          state: latest
-          update_cache: true
-      - name: Add user to docker group
-        ansible.builtin.command: usermod -aG docker 'lucyadmin'
-      - name: Create docker log rotation
-        copy:
-          dest: "/etc/docker/daemon.json"
-          content: |
+    - name: "Add docker GPG key"
+      ansible.builtin.apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+    - name: "Add docker repository"
+      ansible.builtin.apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
+        state: present
+    - name: Install docker
+      ansible.builtin.apt:
+        pkg:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - docker-compose-plugin
+        state: present
+        update_cache: true
+    - name: "Create docker log rotation"
+      ansible.builtin.copy:
+        dest: "/etc/docker/daemon.json"
+        content: |
             {
               "log-driver": "json-file",
               "log-opts": {
               "max-size": "50m",
-              "max-file": "3" 
+              "max-file": "3"
               }
             }
