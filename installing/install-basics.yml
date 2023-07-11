@@ -1,11 +1,13 @@
-- hosts: all
+---
+- name: Playbook - Installing Rocky baseline
+  hosts: all
   become: true
   tasks:
-      - name: Install packages
-        dnf:
-          pkg:
-            - net-tools
-            - qemu-guest-agent
-            - nano
-          state: present
-          update_cache: true
+    - name: Install packages
+      ansible.builtin.yum:
+        pkg:
+          - net-tools
+          - qemu-guest-agent
+          - nano
+        state: present
+        update_cache: true
