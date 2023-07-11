@@ -1,5 +1,5 @@
 ---
-- name: Playbook - Installing Rocky baseline
+- name: Playbook - Installing baseline
   hosts: all
   become: true
   tasks:
