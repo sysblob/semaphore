@@ -3,4 +3,4 @@
   hosts: all
   tasks:
     - name: Create placeholder file
-      ansible.builtin.command: who
+      ansible.builtin.command: mkdir /home/lucyadmin/supsup -p
