@@ -1,0 +1,6 @@
+---
+- name: Play for creating placeholder
+  hosts: all
+  tasks:
+    - name: Create placeholder file
+      ansible.builtin.command: touch /home/lucyadmin/supsup
